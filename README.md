@@ -1,4 +1,4 @@
-# Music Analysis Using Spotify API
+# 🎵 Music Analysis Using Spotify API
 
 This is a simple web application that allows users to authenticate with their Spotify account and access various features of the Spotify API. It is built using Node.js and the Express framework.
 
