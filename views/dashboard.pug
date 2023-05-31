@@ -4,7 +4,7 @@ block content
   h1 Welcome, #{user.display_name}!
   a(href="/playlists") My Playlists
 
-  h2 Liked Songs
+  h2 Liked Songs (50)
 
     table 
       each t in tracks
@@ -16,5 +16,5 @@ block content
           - var track_id = t.track.id 
 
           td #{artist_name}
-          td: a(href='/recommendations?artist=' + artist_id+'&track='+track_id) #{track_name}
+          td: a(href='/recommendations?artist=' + artist_id+'&track='+track_id+'&name='+track_name) #{track_name}
           td: a(href=track_preview) Preview

@@ -48,9 +48,10 @@ app.get("/callback", async (req, res) => {
 
   app.get('/playlist_info', async (req, res) => {
     const playlistId = req.query.id;
+    const playlist_name = req.query.name;
     const playlistTracks = await getData(`/playlists/${playlistId}/tracks`);
   
-    res.render("playlist_info", { playlistTracks: playlistTracks.items });
+    res.render("playlist_info", { playlist_name: playlist_name, playlistTracks: playlistTracks.items });
   });
   
   
@@ -94,6 +95,7 @@ app.get("/dashboard", async (req, res) => {
 app.get("/recommendations", async (req, res) => {
   const artist_id = req.query.artist;
   const track_id = req.query.track;
+  const track_name = req.query.name;
 
   const params = new URLSearchParams({
     seed_artist: artist_id,
@@ -102,7 +104,7 @@ app.get("/recommendations", async (req, res) => {
   });
 
   const data = await getData("/recommendations?" + params);
-  res.render("recommendation", { tracks: data.tracks });
+  res.render("recommendation", { track_name: track_name, tracks: data.tracks });
 });
 
 let listener = app.listen(3000, function () {

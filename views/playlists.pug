@@ -1,8 +1,17 @@
 extends layout.pug
 
 block content
-  h1 Your playlists ✨
-  ul
+  h1 My Playlists ✨
+
+  table 
     each playlist in playlists
-      li
-        a(href=`/playlist_info?id=${playlist.id}`)= playlist.name
+      tr
+        - var playlist_name = playlist.name
+        - var playlist_cover = playlist.images[0].url
+        - var playlist_id = playlist.id
+
+        td
+          a(href=`/playlist_info?id=${playlist_id}&name=${playlist_name}`)
+            img(src=playlist_cover, alt=playlist_name, style='width: 100px;')
+        td 
+          a(href=`/playlist_info?id=${playlist_id}&name=${playlist_name}`) #{playlist_name}
