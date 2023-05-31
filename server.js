@@ -86,7 +86,7 @@ async function getData(endpoint) {
 
 app.get("/dashboard", async (req, res) => {
   const userInfo = await getData("/me");
-  const tracks = await getData("/me/tracks?limit=10");
+  const tracks = await getData("/me/tracks?limit=50");
 
   res.render("dashboard", { user: userInfo, tracks: tracks.items });
 });
