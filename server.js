@@ -9,8 +9,8 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 
 const redirect_uri = "http://localhost:3000/callback";
-const client_id = "client_id"; //Replace with real client id. Don't Share with anyone!
-const client_secret = "client_secret"; //Replace with real client secret. Don't Share with anyone!
+const client_id = "911713b87b594f46ab106d0861db2255";
+const client_secret = "9b468ed1bc8a4bb2bdd20bd42d47429e";
 
 global.access_token;
 
@@ -91,6 +91,14 @@ app.get("/dashboard", async (req, res) => {
 
   res.render("dashboard", { user: userInfo, tracks: tracks.items });
 });
+
+app.get("/search", async (req, res) => {
+  const query = req.query.query;
+  const searchResults = await getData("/search?type=track&q=" + query);
+
+  res.render("search_results", { query: query, results: searchResults.tracks.items });
+});
+
 
 app.get("/recommendations", async (req, res) => {
   const artist_id = req.query.artist;

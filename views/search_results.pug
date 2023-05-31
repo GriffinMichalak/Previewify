@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  h2 Search Results for "#{query}"
+
+  table
+    each result in results
+      tr
+        - var artist_name = result.artists[0].name
+        - var track_name = result.name
+        - var track_preview = result.preview_url
+        - var artist_id = result.artists[0].id
+        - var track_id = result.id
+
+        td #{artist_name}
+        td: a(href='/recommendations?artist=' + artist_id+'&track='+track_id+'&name='+track_name) #{track_name}
+        td: a(href=track_preview) Preview
