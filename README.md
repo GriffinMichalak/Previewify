@@ -15,7 +15,7 @@ Before running the application, make sure you have the following:
 1. Clone the repository and navigate to the project directory.
 2. Install the required dependencies by running the following command:
 3. Open the `server.js` file and replace the placeholders `client_id` and `client_secret` with your Spotify developer account credentials.
-4. Start the application by running the following command in the terminal: 'npm run start'
+4. Start the application by running the following command in the terminal: `npm run start`
 
 5. Once the server is running, you can access the application by visiting [http://localhost:3000](http://localhost:3000) in your web browser.
 
