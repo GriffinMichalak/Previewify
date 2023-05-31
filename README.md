@@ -12,7 +12,7 @@ Before running the application, make sure you have the following:
 
 ## Getting Started
 
-1. Clone the repository and navigate to the project directory.
+1. Clone the repository and navigate to the project directory. Make sure to unzip `.zip`
 2. Install the required dependencies by running the following command:
 3. Open the `server.js` file and replace the placeholders `client_id` and `client_secret` with your Spotify developer account credentials.
 4. Start the application by running the following command in the terminal: `npm run start`
