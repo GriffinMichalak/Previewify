@@ -1,8 +1,10 @@
 extends layout.pug
     
 block content
-    h1 Welcome! #{user.display_name} ✨
-    img(src=user.images[0].url, class='circular_image')
+  h1 Welcome, #{user.display_name}!
+  a(href="/playlists") My Playlists
+
+  h2 Liked Songs
 
     table 
       each t in tracks

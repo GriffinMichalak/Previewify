@@ -40,6 +40,21 @@ app.get("/callback", async (req, res) => {
     grant_type: "authorization_code",
   });
 
+  app.get("/playlists", async (req, res) => {
+    const playlists = await getData("/me/playlists");
+  
+    res.render("playlists", { playlists: playlists.items });
+  });
+
+  app.get('/playlist_info', async (req, res) => {
+    const playlistId = req.query.id;
+    const playlistTracks = await getData(`/playlists/${playlistId}/tracks`);
+  
+    res.render("playlist_info", { playlistTracks: playlistTracks.items });
+  });
+  
+  
+  
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "post",
     body: body,

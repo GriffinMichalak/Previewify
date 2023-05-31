@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+  h1 Your playlists ✨
+  ul
+    each playlist in playlists
+      li
+        a(href=`/playlist_info?id=${playlist.id}`)= playlist.name

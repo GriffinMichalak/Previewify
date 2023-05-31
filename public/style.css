@@ -29,3 +29,16 @@ td {
   overflow: hidden;
   float: left;
 }
+
+a.oval-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px; 
+  background-color: #1ed760; 
+  color: #ffffff; 
+  text-decoration: none;
+}
+
+a.oval-link:hover {
+  background-color: #1db954; 
+}
