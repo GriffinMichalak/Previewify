@@ -8,6 +8,7 @@ Before running the application, make sure you have the following:
 
 - Node.js installed on your machine
 - Spotify developer account credentials (client ID and client secret)
+  - Go to [developer.spotify.com](https://developer.spotify.com/) > Dashboard > Create new project > Set Redirect URI to ```http://localhost:3000/callback``` > Go to settings > Copy client ID and client secret.
 
 ## Getting Started
 
