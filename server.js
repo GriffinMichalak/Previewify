@@ -9,8 +9,8 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 
 const redirect_uri = "http://localhost:3000/callback";
-const client_id = "your_cliend_id_here";
-const client_secret = "your_client_secret_here";
+const client_id = "911713b87b594f46ab106d0861db2255";
+const client_secret = "9b468ed1bc8a4bb2bdd20bd42d47429e";
 
 global.access_token;
 
@@ -104,6 +104,7 @@ app.get("/recommendations", async (req, res) => {
   const artist_id = req.query.artist;
   const track_id = req.query.track;
   const track_name = req.query.name;
+  const track_artist = req.query.artist;
 
   const params = new URLSearchParams({
     seed_artist: artist_id,
@@ -112,8 +113,15 @@ app.get("/recommendations", async (req, res) => {
   });
 
   const data = await getData("/recommendations?" + params);
-  res.render("recommendation", { track_name: track_name, tracks: data.tracks });
+  res.render("recommendation", { 
+    track_artist: track_artist, 
+    track_name: track_name, 
+    tracks: data.tracks,
+    artist_name: track_artist, 
+    song_name: track_name 
+  });
 });
+
 
 let listener = app.listen(3000, function () {
   console.log(

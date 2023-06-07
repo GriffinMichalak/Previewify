@@ -1,16 +1,16 @@
 extends layout.pug
-    
+
 block content
     h1 Recommendations
-    h4 Songs like "#{track_name}" #{track_artist}
+    h4 Songs like "#{song_name}" - #{artist_name}
 
     table 
       each t in tracks
         tr 
           - var artist_name = t.artists[0].name
-          - var track_name = t.name
+          - var song_name = t.name
           - var track_preview = t.preview_url
 
           td #{artist_name}
-          td #{track_name}
+          td #{song_name}
           td: a(href=track_preview) Preview
